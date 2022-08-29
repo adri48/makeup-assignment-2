@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/login", :controller => "sessions", :action => "new"
   get "/logout", :controller => "sessions", :action => "destroy"
 
+  resources "comments"
   resources "posts"
   resources "sessions"
   resources "users"

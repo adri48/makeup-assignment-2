@@ -1,0 +1,14 @@
+<h2>New Comment</h2>
+
+<% if @current_user %>
+  <%= form_with :model => @comment do |form| %>
+    <div class="mb-3">
+      <%= form.label "text", :class => "form-label" %>
+      <%= form.text_field "text", :class => "form-control" %>
+    </div>
+
+    <%= form.submit "Post Comment", :class => "btn btn-primary" %>
+  <% end %>
+<% else %>
+  You must first <a href="/login">login</a> to post.
+<% end %>

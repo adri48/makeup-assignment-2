@@ -1,0 +1,16 @@
+<div class="row">
+  <% for comment in @comments %>
+    <div class="col-md-3 col-sm-6">
+      <h4>
+        <% user = User.find_by({ "id" => comment["user_id"] }) %>
+        <% if user %>
+          <%= user["first_name"] %>
+        <% else %>
+          anonymous
+        <% end %>
+      </h4>
+
+      <p><%= comment["text"] %></p>
+    </div>
+  <% end %>
+</div>
